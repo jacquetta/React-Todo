@@ -1,27 +1,18 @@
 import React from 'react';
 
-const tasks =[];
+function Todo (props) {
 
-class Todo extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            task: tasks
-        };
-    }
-
-    render(){
-        return (
-            <div>
-                <input 
-                    task = 'task'
-                    value={this.state.task}
-                    placeholder='Task'
-                />
-
-            </div>
-        );
-    }
+    return (
+        <div 
+            className={props.item.completed}
+            key={props.item.id}
+            onClick={event => {props.toggleItem(props.item.id);
+            
+            }}
+            >
+            <p>{props.item.todo}</p>
+        </div>
+    );
 }
 
 export default Todo;
