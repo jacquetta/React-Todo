@@ -16,7 +16,7 @@ class TodoForm extends React.Component{
                 onChange={this.props.inputTask}
                 />
             <button type='submit'>Add todo</button>
-            <button type='remove'>Completed</button>
+            
         </form>
     );
     }

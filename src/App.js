@@ -80,17 +80,15 @@ class App extends React.Component {
     return (
       <div>
         <h1>Todo App</h1>
-        <TodoForm  
+        <TodoForm
           todo={this.state.item}
           inputTask={this.inputTask}
           addToDo={this.addToDo}
         />
 
-        <TodoList 
-          todos={this.state.todos}
-          toggleItem={this.toggleItem}
-        />
-        
+        <TodoList todos={this.state.todos} toggleItem={this.toggleItem} />
+
+        <button onClick={this.clearCompleted}>Completed</button>
       </div>
     );
   }
