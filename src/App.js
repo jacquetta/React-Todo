@@ -3,14 +3,27 @@ import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
-const todos = [];
+const todos = [
+  {
+    name: 'Add Todo',
+    id: 4738,
+    completed: false
+  },
+
+  {
+    name: 'Add Button',
+    id: 7894,
+    completed: false
+  }
+
+];
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
       todos: todos,
-      todo: ''
+      item: ''
     };
   }
 
@@ -27,7 +40,7 @@ class App extends React.Component {
           {
             completed: false,
             id: Date.now(),
-            name: prevState.todo
+            name: prevState.item
           }
         ],
         todo: ''
@@ -41,7 +54,7 @@ class App extends React.Component {
        todos: prevState.todos.map(todoItem => {
          if(todoItem.id === idTodo){
            return {
-             name: todoItem.todo,
+             todo: todoItem.todo,
              id: todoItem.id,
              completed: !idTodo.completed
            };
@@ -53,12 +66,22 @@ class App extends React.Component {
    })
  }
 
+ clearCompleted = () => {
+  this.setState(prevState => {
+    return {
+      todos: prevState.todos.filter(taskItem => {
+        return !taskItem.completed;
+      })
+    }
+  });
+ }
+
     render() {
     return (
       <div>
         <h1>Todo App</h1>
         <TodoForm  
-          todo={this.state.todo}
+          todo={this.state.item}
           inputTask={this.inputTask}
           addToDo={this.addToDo}
         />

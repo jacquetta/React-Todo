@@ -10,13 +10,13 @@ class TodoForm extends React.Component{
         <form onSubmit={this.props.addToDo}>
             <input
                 type='text'
-                placeholder='Todo'
-                value={this.props.todo}
-                name='todo'
+                placeholder='Add Todo'
+                value={this.props.item}
+                name='item'
                 onChange={this.props.inputTask}
                 />
             <button type='submit'>Add todo</button>
-            <button type='remove'>Clear Completed</button>
+            <button type='remove'>Completed</button>
         </form>
     );
     }
