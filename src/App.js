@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './App.css';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
@@ -38,12 +39,12 @@ class App extends React.Component {
         todos: [
           ...prevState.todos,
           {
-            completed: false,
+            name: prevState.item,
             id: Date.now(),
-            name: prevState.item
+            completed: false
           }
         ],
-        todo: ''
+        item: ''
       }
     })
   }
@@ -54,7 +55,7 @@ class App extends React.Component {
        todos: prevState.todos.map(todoItem => {
          if(todoItem.id === idTodo){
            return {
-             todo: todoItem.todo,
+             name: todoItem.name,
              id: todoItem.id,
              completed: !idTodo.completed
            };
@@ -62,9 +63,9 @@ class App extends React.Component {
            return todoItem;
          }
        })
-     }
-   })
- }
+     };
+   });
+ };
 
  clearCompleted = () => {
   this.setState(prevState => {
@@ -72,23 +73,24 @@ class App extends React.Component {
       todos: prevState.todos.filter(taskItem => {
         return !taskItem.completed;
       })
-    }
+    };
   });
  }
 
     render() {
     return (
-      <div>
-        <h1>Todo App</h1>
+      <div className="container">
+        <div className="header">
+          <h1>Todo App</h1>
+        </div>
         <TodoForm
           todo={this.state.item}
           inputTask={this.inputTask}
           addToDo={this.addToDo}
+          clearCompleted={this.clearCompleted}
         />
 
         <TodoList todos={this.state.todos} toggleItem={this.toggleItem} />
-
-        <button onClick={this.clearCompleted}>Completed</button>
       </div>
     );
   }

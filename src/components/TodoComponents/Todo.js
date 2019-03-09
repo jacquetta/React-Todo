@@ -10,7 +10,9 @@ function Todo (props) {
             
             }}
             >
-            <p>{props.item.name}</p>
+
+            <p className='todoPara'>{props.item.name}</p>
+
         </div>
     );
 }

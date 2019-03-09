@@ -1,0 +1,31 @@
+form{
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+}
+
+
+.todoPara{
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+    color: #494949;
+    margin-left: 2%;
+}
+
+button{
+    font-family: 'Overpass', sans-serif;
+    width: 30%;
+    height: 30px;
+    background-color: #e8d7ff;
+    border: 2px solid #494949;
+    margin: 1% auto;
+}
+
+
+input {
+    font-family: 'Overpass', sans-serif;
+    margin: 0 auto;
+    width: 48%;
+    height: 30px;
+    border: 2px solid #494949;
+} 
