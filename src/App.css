@@ -1,0 +1,56 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f1f3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 1% auto;
+    width: 100%;
+    max-width: 500px;
+    height: 550px;
+    font-size: 62.5%;
+    background: #D3FFF3;
+    border: 3px solid #e8d7ff;
+    overflow: auto;
+    box-shadow: 10px 10px 5px #393e41;
+    border-radius: 15px;
+}
+
+h1{
+    font-size: 3.0rem;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    text-align: center;
+    color: #f1f1f3;
+    text-shadow: 4px 1px 2px #494949, 0 0 35px #4c0f9b, 0 0 5px rgb(58, 4, 58);
+}
+
+.item.completed {
+  background-color: #ffd3e8;
+  text-decoration: line-through;
+}
+
+
+
