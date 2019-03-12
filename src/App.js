@@ -47,6 +47,8 @@ class App extends React.Component {
         item: ''
       }
     })
+    localStorage.setItem('todos', JSON.stringify('todos'));
+    localStorage.setItem('item', '');
   }
 
  toggleItem = idTodo => {
@@ -75,6 +77,12 @@ class App extends React.Component {
       })
     };
   });
+  localStorage.setItem('todos', JSON.stringify(todos))
+ }
+
+ updateInput(key, value){
+   this.setState({[key]: value});
+   localStorage.set(key, value);
  }
 
     render() {
